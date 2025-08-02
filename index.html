@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>Waithira Kamau | Portfolio</title>
   <style>
     /* Global Styles */
     * {
@@ -88,11 +88,21 @@
       background: #e67e22;
     }
 
-    /* About Section */
-    .about {
+    /* Generic Section Style */
+    section {
       padding: 3rem 1rem;
       max-width: 1200px;
       margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* About Section */
+    .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
@@ -104,25 +114,75 @@
       border-radius: 10px;
     }
 
-    .about-content h3 {
-      margin-bottom: 1rem;
-      font-size: 2rem;
-    }
-
     .about-content p {
       margin-bottom: 1rem;
+    }
+
+    /* Projects Section */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h4 {
+      margin-bottom: 0.5rem;
+      color: #2575fc;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #f39c12;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .project-card a:hover {
+      color: #e67e22;
+    }
+
+    /* Experience and Education */
+    .experience, .education {
+      background: #fff;
+      margin-top: 2rem;
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .exp-item, .edu-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-item h4, .edu-item h4 {
+      color: #2575fc;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-item span, .edu-item span {
+      font-size: 0.9rem;
+      color: #555;
     }
 
     /* Resume Section */
     .resume-section {
       text-align: center;
-      padding: 3rem 1rem;
       background-color: #fff;
-    }
-
-    .resume-section h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
+      border-radius: 10px;
+      padding: 3rem 1rem;
+      margin-top: 2rem;
     }
 
     .resume-section a {
@@ -140,13 +200,38 @@
       background: #1a5edb;
     }
 
-    /* Footer */
+    /* Contact Section */
+    .contact {
+      background: #f4f4f4;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer with Social Links */
     footer {
       text-align: center;
-      padding: 1rem;
+      padding: 2rem 1rem;
       background: #333;
       color: #fff;
       margin-top: 2rem;
+    }
+
+    .social-links a {
+      color: #fff;
+      margin: 0 1rem;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #f39c12;
     }
 
     /* Responsive Design */
@@ -171,11 +256,15 @@
 
   <!-- Header -->
   <header>
-    <h1>My Portfolio</h1>
+    <h1>Waithira Kamau</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#resume">Resume</a></li>
       </ul>
     </nav>
@@ -198,15 +287,79 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h3>My Projects</h3>
+    <div class="project-grid">
+      <div class="project-card">
+        <h4>Customer Churn Prediction</h4>
+        <p>Built a machine learning model to predict customer churn using Python and scikit-learn, achieving 85% accuracy.</p>
+        <a href="https://github.com/yourusername/customer-churn" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h4>Hospital Management API</h4>
+        <p>Developed a Node.js + MySQL backend API for managing patients, doctors, and appointments with secure authentication.</p>
+        <a href="https://github.com/yourusername/hospital-management-api" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h4>Stock Option Pricing with Heston Model</h4>
+        <p>Simulated European and Asian options pricing using Monte Carlo and the Heston stochastic volatility model in Python.</p>
+        <a href="https://github.com/yourusername/heston-model-pricing" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <h3>Experience</h3>
+    <div class="exp-item">
+      <h4>Data Entry Professional - IEBC Kenya</h4>
+      <span>Sep 2021 - Oct 2021</span>
+      <p>Verified and processed large datasets with 99% accuracy. Conducted data quality assessments and generated detailed reports to support election management.</p>
+    </div>
+    <div class="exp-item">
+      <h4>Customer Experience Analyst</h4>
+      <span>2020 - 2021</span>
+      <p>Managed customer feedback, conducted data analysis, and provided insights to improve service quality and customer retention.</p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section class="education" id="education">
+    <h3>Education</h3>
+    <div class="edu-item">
+      <h4>Bachelor of Science in Statistics</h4>
+      <span>2015 - 2020 | Second Class Upper Division</span>
+      <p>Studied statistical programming, database systems, time series analysis, and Bayesian statistics.</p>
+    </div>
+    <div class="edu-item">
+      <h4>Kenya Certificate of Secondary Education</h4>
+      <span>Karima Girls’ High School | 2014 | A-, 80 points</span>
+    </div>
+  </section>
+
   <!-- Resume Section -->
   <section class="resume-section" id="resume">
     <h3>Download My Resume</h3>
-    <p>Click the button below to download my latest resume in PDF format.</p>
+    <p>Click below to download my latest resume in PDF format.</p>
     <a href="resume.pdf" download>Download Resume</a>
   </section>
 
-  <!-- Footer -->
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h3>Contact Me</h3>
+    <p>Email: waithirak.dorothy@gmail.com</p>
+    <p>Phone: +254715570444</p>
+  </section>
+
+  <!-- Footer with Social Links -->
   <footer>
+    <p>Connect with me:</p>
+    <div class="social-links">
+      <a href="https://github.com/WaithiraHawi" target="_blank">GitHub</a> |
+      <a href="www.linkedin.com/in/waithira-kamau-a4843130b" target="_blank">LinkedIn</a> |
+      <a href="https://medium.com/@waithirak.dorothy" target="_blank">Medium</a>
+    </div>
     <p>© 2025 Waithira Kamau. All rights reserved.</p>
   </footer>
 
