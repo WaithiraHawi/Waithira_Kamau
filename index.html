@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero a {
+      display: inline-block;
+      background: #f39c12;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .hero a:hover {
+      background: #e67e22;
+    }
+
+    /* About Section */
+    .about {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .about-content h3 {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1rem;
+    }
+
+    /* Resume Section */
+    .resume-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #fff;
+    }
+
+    .resume-section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .resume-section a {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #2575fc;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .resume-section a:hover {
+      background: #1a5edb;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: #fff;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h2>Hi, I'm Waithira Kamau</h2>
+    <p>Data Enthusiast | Machine Learning | Customer Experience</p>
+    <a href="#resume">Download My Resume</a>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <img src="https://via.placeholder.com/500" alt="Profile Picture">
+    <div class="about-content">
+      <h3>About Me</h3>
+      <p>I am a data and machine learning enthusiast with experience in customer experience and analytics. Skilled in Python, SQL, and statistical modeling, I aim to solve business problems through data-driven insights.</p>
+      <p>Currently transitioning into tech, working on projects involving predictive analytics and machine learning for finance and customer retention.</p>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section class="resume-section" id="resume">
+    <h3>Download My Resume</h3>
+    <p>Click the button below to download my latest resume in PDF format.</p>
+    <a href="resume.pdf" download>Download Resume</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Waithira Kamau. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
