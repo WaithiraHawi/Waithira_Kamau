@@ -110,8 +110,11 @@
     }
 
     .about img {
-      width: 100%;
+      width: 250px; /* Reduced width */
+      height: auto;
       border-radius: 10px;
+      display: block;
+      margin: auto;
     }
 
     .about-content p {
@@ -130,6 +133,7 @@
       padding: 1rem;
       border-radius: 10px;
       transition: transform 0.3s;
+      text-align: center;
     }
 
     .project-card:hover {
@@ -139,6 +143,15 @@
     .project-card h4 {
       margin-bottom: 0.5rem;
       color: #2575fc;
+    }
+
+    .project-card img {
+      width: 100%;
+      max-width: 200px; /* Reduced size */
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem;
+      border-radius: 8px;
     }
 
     .project-card a {
@@ -229,6 +242,8 @@
       }
     }
   </style>
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -258,7 +273,7 @@
     <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\Logo.png" alt="Profile Picture">
     <div class="about-content">
       <h3>About Me</h3>
-      <p> Hi, I’m Waithira Kamau, a data enthusiast with a background in statistics, programming, and customer experience. I enjoy analyzing data, and building predictive models that turn insights into real impact. My goal is to craft data-driven solutions that impact consumers. Skilled in Python, SQL, and statistical modeling.</p>
+      <p>Hi, I’m Waithira Kamau, a data enthusiast with a background in statistics, programming, and customer experience. I enjoy analyzing data and building predictive models that turn insights into real impact. My goal is to craft data-driven solutions that impact consumers. Skilled in Python, SQL, and statistical modeling.</p>
     </div>
   </section>
 
@@ -267,13 +282,13 @@
     <h3>Projects</h3>
     <div class="project-grid">
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\custchurn.png" alt="Customer Churn" class="project-image">
+        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\custchurn.png" alt="Customer Churn">
         <h4>Customer Churn Prediction</h4>
         <p>Built a machine learning model to predict customer churn using Python and scikit-learn, achieving 85% accuracy.</p>
         <a href="https://github.com/yourusername/customer-churn" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\Sentiment.png" alt="Sentiment Analysis Project" class="project-image">
+        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\Sentiment.png" alt="Sentiment Analysis Project">
         <h4>Sentiment Analysis</h4>
         <p>Developed a Sentiment Analysis platform using Python.</p>
         <a href="https://github.com/WaithiraHawi/Sentiment_Analysis" target="_blank">View on GitHub</a>
@@ -284,24 +299,23 @@
         <a href="https://github.com/WaithiraHawi/Derivative_Pricing" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\customer value.png" alt="Customer_Lifetime_Value" class="project-image">
+        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\customer value.png" alt="Customer Lifetime Value">
         <h4>Customer Lifetime Value</h4>
         <p>Customer Lifetime Value</p>
         <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust journey.png" alt="Customer mapping" class="project-image">
+        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust journey.png" alt="Customer mapping">
         <h4>Customer Journey</h4>
         <p>Customer Journey Mapping.</p>
         <a href="https://github.com/WaithiraHawi/Customer-Journey-Mapping-and-Prediction" target="_blank">View on GitHub</a>
       </div>
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust fraud.png" alt="Loan Default Analysis" class="project-image">
+        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust fraud.png" alt="Loan Default Analysis">
         <h4>Loan default prediction</h4>
         <p>Loan default.</p>
         <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">View on GitHub</a>
       </div>
-
     </div>
   </section>
 
