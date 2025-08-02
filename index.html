@@ -152,19 +152,11 @@
       display: block;
       margin: 0 auto 1rem;
       border-radius: 8px;
+      transition: transform 0.3s;
     }
 
-    .project-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #f39c12;
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .project-card a:hover {
-      color: #e67e22;
+    .project-card img:hover {
+      transform: scale(1.05);
     }
 
     /* Resume Section */
@@ -281,41 +273,55 @@
   <section class="projects" id="projects">
     <h3>Projects</h3>
     <div class="project-grid">
+
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\custchurn.png" alt="Customer Churn">
+        <a href="https://github.com/yourusername/customer-churn" target="_blank">
+          <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\custchurn.png" alt="Customer Churn">
+        </a>
         <h4>Customer Churn Prediction</h4>
         <p>Built a machine learning model to predict customer churn using Python and scikit-learn, achieving 85% accuracy.</p>
-        <a href="https://github.com/yourusername/customer-churn" target="_blank">View on GitHub</a>
       </div>
+
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\Sentiment.png" alt="Sentiment Analysis Project">
+        <a href="https://github.com/WaithiraHawi/Sentiment_Analysis" target="_blank">
+          <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\Sentiment.png" alt="Sentiment Analysis Project">
+        </a>
         <h4>Sentiment Analysis</h4>
         <p>Developed a Sentiment Analysis platform using Python.</p>
-        <a href="https://github.com/WaithiraHawi/Sentiment_Analysis" target="_blank">View on GitHub</a>
       </div>
+
       <div class="project-card">
+        <a href="https://github.com/WaithiraHawi/Derivative_Pricing" target="_blank">
+          <img src="https://via.placeholder.com/200x120.png?text=Heston+Model" alt="Stock Option Pricing Project">
+        </a>
         <h4>Stock Option Pricing with Heston Model</h4>
         <p>Simulated European and Asian options pricing using Monte Carlo and the Heston stochastic volatility model in Python.</p>
-        <a href="https://github.com/WaithiraHawi/Derivative_Pricing" target="_blank">View on GitHub</a>
       </div>
+
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\customer value.png" alt="Customer Lifetime Value">
+        <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">
+          <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\customer value.png" alt="Customer Lifetime Value">
+        </a>
         <h4>Customer Lifetime Value</h4>
         <p>Customer Lifetime Value</p>
-        <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">View on GitHub</a>
       </div>
+
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust journey.png" alt="Customer mapping">
+        <a href="https://github.com/WaithiraHawi/Customer-Journey-Mapping-and-Prediction" target="_blank">
+          <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust journey.png" alt="Customer mapping">
+        </a>
         <h4>Customer Journey</h4>
         <p>Customer Journey Mapping.</p>
-        <a href="https://github.com/WaithiraHawi/Customer-Journey-Mapping-and-Prediction" target="_blank">View on GitHub</a>
       </div>
+
       <div class="project-card">
-        <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust fraud.png" alt="Loan Default Analysis">
+        <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">
+          <img src="C:\Users\Administrator\Desktop\MLE\Portfolio images\cust fraud.png" alt="Loan Default Analysis">
+        </a>
         <h4>Loan default prediction</h4>
         <p>Loan default.</p>
-        <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">View on GitHub</a>
       </div>
+
     </div>
   </section>
 
