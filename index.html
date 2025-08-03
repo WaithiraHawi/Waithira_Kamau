@@ -4,12 +4,284 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Waithira Kamau | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* === Global Styles === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f5f5f5, #f8d7da);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+    }
+
+    /* === Header === */
+    header {
+      background: #6c5b7b;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffb6c1;
+    }
+
+    #menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* === Hero Section === */
+    .hero {
+      background: linear-gradient(to right, #ff6f91, #ff9671);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .btn {
+      background: white;
+      color: #ff6f91;
+      padding: 0.7rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 0.5rem;
+      transition: 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #ffe0e9;
+      transform: scale(1.05);
+    }
+
+    /* === About Section === */
+    .about {
+      max-width: 1000px;
+      margin: 4rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      gap: 2rem;
+      animation: slideUp 2s ease;
+    }
+
+    .about p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .profile-img {
+      width: 250px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffb6c1;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+      transform: rotate(5deg) scale(1.05);
+    }
+
+    /* === Projects === */
+    .projects {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .project-card:hover .overlay {
+      opacity: 1;
+    }
+
+    /* === Resume Section === */
+    .resume-section {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: white;
+      margin: 2rem auto;
+      border-radius: 10px;
+      max-width: 700px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      animation: fadeIn 2s ease-in;
+    }
+
+    .resume-section .btn {
+      background: #6c5b7b;
+      color: white;
+      border-radius: 25px;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .resume-section .btn:hover {
+      background: #ff6f91;
+      transform: scale(1.05);
+    }
+
+    /* === Contact Section === */
+    .contact {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f8d7da;
+    }
+
+    .social-links a {
+      font-size: 2rem;
+      margin: 0 1rem;
+      color: #6c5b7b;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ff6f91;
+    }
+
+    /* === Footer === */
+    footer {
+      background: #6c5b7b;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+
+    /* === Animations === */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* === Responsive === */
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #6c5b7b;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-img {
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Header -->
   <header>
     <h1>Waithira Kamau</h1>
     <nav id="navbar">
@@ -30,7 +302,7 @@
     <p>Transforming raw data into actionable insights through analysis and predictive modeling.</p>
     <div class="hero-buttons">
       <a href="#projects" class="btn">View Projects</a>
-      <a href="#resume" class="btn btn-secondary">Download Resume</a>
+      <a href="#resume" class="btn">Download Resume</a>
     </div>
   </section>
 
@@ -51,28 +323,28 @@
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Sentiment_Analysis" target="_blank">
           <img src="images/Sentiment.png" alt="Sentiment Analysis Project">
-          <div class="overlay"><h4>Sentiment Analysis</h4></div>
+          <div class="overlay">Sentiment Analysis</div>
         </a>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">
           <img src="images/customer_value.png" alt="Customer Lifetime Value">
-          <div class="overlay"><h4>Customer Lifetime Value</h4></div>
+          <div class="overlay">Customer Lifetime Value</div>
         </a>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">
           <img src="images/Fraud_detection.png" alt="Loan Default Prediction">
-          <div class="overlay"><h4>Loan Default Prediction</h4></div>
+          <div class="overlay">Loan Default Prediction</div>
         </a>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Customer-Journey-Mapping-and-Prediction" target="_blank">
           <img src="images/cust_journey.png" alt="Customer Journey Mapping">
-          <div class="overlay"><h4>Customer Journey Mapping</h4></div>
+          <div class="overlay">Customer Journey Mapping</div>
         </a>
       </div>
 
@@ -104,6 +376,24 @@
     <p>© 2025 Waithira Kamau | Built with ❤️ for GitHub Pages</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
+
+    // Smooth scroll to section
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+        navMenu.classList.remove('show');
+      });
+    });
+  </script>
 </body>
 </html>
