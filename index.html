@@ -3,318 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waithira Kamau | Portfolio</title>
-  <style>
-    /* Global Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #333;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-    }
-
-    nav ul li {
-      margin-left: 1.5rem;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #f39c12;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(to right, #7a0404, #fc253e);
-      color: #640404;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-
-    .hero a {
-      display: inline-block;
-      background: #f39c12;
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .hero a:hover {
-      background: #e67e22;
-    }
-
-    /* Generic Section Style */
-    section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h3 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    /* About Section */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .about img {
-      width: 250px;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-      margin: auto;
-    }
-
-    .about-content p {
-      margin-bottom: 1rem;
-    }
-
-    /* Projects Section */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: #f4f4f4;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s;
-      text-align: center;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .project-card h4 {
-      margin-bottom: 0.5rem;
-      color: #2575fc;
-    }
-
-    .project-card img {
-      width: 100%;
-      max-width: 200px;
-      height: auto;
-      display: block;
-      margin: 0 auto 1rem;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .project-card img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Resume Section */
-    .resume-section {
-      text-align: center;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 3rem 1rem;
-      margin-top: 2rem;
-    }
-
-    .resume-section a {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: #2575fc;
-      color: #fff;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .resume-section a:hover {
-      background: #1a5edb;
-    }
-
-    /* Contact Section */
-    .contact {
-      background: #f4f4f4;
-      border-radius: 10px;
-      padding: 2rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .contact p {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Footer with Social Links */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #333;
-      color: #fff;
-      margin-top: 2rem;
-    }
-
-    .social-links {
-      margin-top: 1rem;
-    }
-
-    .social-links a {
-      color: #fff;
-      margin: 0 1rem;
-      font-size: 2rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #f39c12;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .about {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav ul li {
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
-  <!-- Font Awesome for Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Waithira Kamau | Data Analyst Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Navigation -->
   <header>
     <h1>Waithira Kamau</h1>
-    <nav>
+    <nav id="navbar">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#resume">Resume</a></li>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
+    <button id="menu-toggle"><i class="fas fa-bars"></i></button>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <h2>I'm Waithira Kamau</h2>
-    <p>Data Analyst | Customer Experience</p>
-    <a href="#resume">Download My Resume</a>
+    <h2>Data Analyst & Machine Learning Enthusiast</h2>
+    <p>Transforming raw data into actionable insights through analysis and predictive modeling.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="#resume" class="btn btn-secondary">Download Resume</a>
+    </div>
   </section>
 
   <!-- About Section -->
   <section class="about" id="about">
     <div class="about-content">
       <h3>About Me</h3>
-      <p>Hi, I’m Waithira Kamau, a data enthusiast with a background in statistics, programming, and customer experience. I enjoy analyzing data and building predictive models that turn insights into real impact. My goal is to craft data-driven solutions that impact consumers. Skilled in Python, SQL, and statistical modeling.</p>
+      <p>I am a data analyst with a background in statistics, programming, and customer experience. I enjoy analyzing data, building predictive models, and telling compelling stories through dashboards and reports. Skilled in Python, SQL, Excel, and machine learning techniques.</p>
     </div>
+    <img src="images/profile.jpg" alt="Waithira Kamau" class="profile-img">
   </section>
 
   <!-- Projects Section -->
   <section class="projects" id="projects">
-    <h3>Projects</h3>
+    <h3>My Projects</h3>
     <div class="project-grid">
-
-      <div class="project-card">
-        <a href="https://github.com/yourusername/customer-churn" target="_blank">
-          <img src="images/custchurn.png" alt="Customer Churn">
-        </a>
-        <h4>Customer Churn Prediction</h4>
-        <p>Built a machine learning model to predict customer churn using Python and scikit-learn, achieving 85% accuracy.</p>
-      </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Sentiment_Analysis" target="_blank">
           <img src="images/Sentiment.png" alt="Sentiment Analysis Project">
+          <div class="overlay"><h4>Sentiment Analysis</h4></div>
         </a>
-        <h4>Sentiment Analysis</h4>
-        <p>Developed a Sentiment Analysis platform using Python.</p>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">
           <img src="images/customer_value.png" alt="Customer Lifetime Value">
+          <div class="overlay"><h4>Customer Lifetime Value</h4></div>
         </a>
-        <h4>Customer Lifetime Value</h4>
-        <p>Customer Lifetime Value.</p>
+      </div>
+
+      <div class="project-card">
+        <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">
+          <img src="images/Fraud_detection.png" alt="Loan Default Prediction">
+          <div class="overlay"><h4>Loan Default Prediction</h4></div>
+        </a>
       </div>
 
       <div class="project-card">
         <a href="https://github.com/WaithiraHawi/Customer-Journey-Mapping-and-Prediction" target="_blank">
           <img src="images/cust_journey.png" alt="Customer Journey Mapping">
+          <div class="overlay"><h4>Customer Journey Mapping</h4></div>
         </a>
-        <h4>Customer Journey</h4>
-        <p>Customer Journey Mapping.</p>
-      </div>
-
-      <div class="project-card">
-        <a href="https://github.com/WaithiraHawi/Loan-default" target="_blank">
-          <img src="images/Fraud_detection.png" alt="Loan Default Analysis">
-        </a>
-        <h4>Loan default prediction</h4>
-        <p>Loan default.</p>
       </div>
 
     </div>
@@ -323,32 +82,28 @@
   <!-- Resume Section -->
   <section class="resume-section" id="resume">
     <h3>Download My Resume</h3>
-    <p>Click below to download my latest resume in PDF format.</p>
-    <a href="Dorothy Mary Waithira Kamau Resume.pdf" download>Download Resume</a>
+    <p>Click below to get my latest resume in PDF format.</p>
+    <a href="Dorothy_Mary_Waithira_Kamau_Resume.pdf" class="btn" download>Download Resume</a>
   </section>
 
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <h3>Contact Me</h3>
-    <p>Email: waithirak.dorothy@gmail.com</p>
-    <p>Phone: +254715570444</p>
+    <p>Email: <a href="mailto:waithirak.dorothy@gmail.com">waithirak.dorothy@gmail.com</a></p>
+    <p>Phone: <a href="tel:+254715570444">+254715570444</a></p>
+
+    <div class="social-links">
+      <a href="https://github.com/WaithiraHawi" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/waithirakamau/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://medium.com/@waithirak.dorothy" target="_blank"><i class="fab fa-medium"></i></a>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>Connect with me:</p>
-    <div class="social-links">
-      <a href="https://github.com/WaithiraHawi" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/waithirakamau/" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://medium.com/@waithirak.dorothy" target="_blank">
-        <i class="fab fa-medium"></i>
-      </a>
-    </div>
-    <p>© 2025 Waithira Kamau. All rights reserved.</p>
+    <p>© 2025 Waithira Kamau | Built with ❤️ for GitHub Pages</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
