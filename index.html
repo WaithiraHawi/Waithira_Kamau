@@ -210,6 +210,27 @@
     .project-info h4 { color: var(--accent); margin-bottom: 0.5rem; }
     .project-info p { color: var(--grey-medium); font-size: 0.9rem; }
 
+    /* === Dashboards === */
+    .dashboards h2 { color: var(--accent); margin-bottom: 1rem; }
+    .dash-desc { margin-bottom: 1.5rem; color: var(--grey-medium); }
+    .dashboards-container {
+      width: 90%;
+      max-width: 1200px;
+      min-height: 500px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dashboard-card {
+      width: 280px;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: grab;
+      position: absolute;
+      transition: transform 0.2s;
+    }
+    .dashboard-card img { width: 100%; display: block; }
+    .dashboard-card:active { cursor: grabbing; transform: scale(1.05); }
+
     /* === Contact === */
     .contact h2 { color: var(--accent); margin-bottom: 1rem; }
     .contact p { color: var(--grey-light); margin: 0.5rem 0; }
@@ -240,6 +261,7 @@
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
+    <a href="#dashboards">Dashboards</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="menu-overlay" id="menu-overlay"></div>
@@ -353,62 +375,159 @@
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:waithirak.dorothy@gmail.com">waithirak.dorothy@gmail.com</a></p>
-    <div class="social-links">
-      <a href="https://github.com/WaithiraHawi"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/waithirakamau/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://medium.com/@waithirak.dorothy"><i class="fab fa-medium"></i></a>
-    </div>
-  </section>
-
-  <footer>&copy; 2025 Waithira Kamau. All Rights Reserved.</footer>
-
-  <script>
-    const intro = document.getElementById('intro');
-    const introVideo = document.getElementById('introVideo');
-    const hero = document.querySelector('.hero');
-
-    function enterSite() {
-      intro.style.opacity = '0';
-      setTimeout(() => { 
-        intro.style.display = 'none';
-        hero.classList.add('visible');
-      }, 1000);
-    }
-
-    // Auto-enter after video ends
-    introVideo.addEventListener('ended', enterSite);
-
-    // Sidebar menu logic
-    const sidebar = document.getElementById('sidebar');
-    const menuBtn = document.getElementById('menu-btn');
-    const menuOverlay = document.getElementById('menu-overlay');
-
-    menuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      menuOverlay.classList.toggle('show');
-    });
-    menuOverlay.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      menuOverlay.classList.remove('show');
-    });
-
-    // Active section highlight + slide-in animation
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
-          document.querySelector(`.sidebar a[href="#${entry.target.id}"]`).classList.add('active');
-          entry.target.classList.add('visible');
-        }
+    <!-- Dashboards -->
+    <section id="dashboards" class="dashboards">
+      <h2>Dashboards</h2>
+      <p class="dash-desc">Right click to drag and arrange dashboards, left click to view.</p>
+      <div class="dashboards-container" id="dashboards-container">
+        <div class="dashboard-card" style="top:10px;left:10px;">
+          <img src="dashboard.jpg" alt="Dashboard 1">
+        </div>
+        <div class="dashboard-card" style="top:10px;left:320px;">
+          <img src="dash.jpg" alt="Dashboard 2">
+        </div>
+        <div class="dashboard-card" style="top:250px;left:10px;">
+          <img src="dbrds (4).jpg" alt="Dashboard 3">
+        </div>
+      </div>
+    </section>
+  
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <p>Email: waithirak.dorothy@gmail.com</p>
+      <p>Phone: +254 791 285 332</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/waithira-kamau/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/WaithiraHawi" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://medium.com/@waithirak.dorothy" target="_blank"><i class="fab fa-medium"></i></a>
+      </div>
+    </section>
+  
+    <footer>
+      &copy; 2025 Waithira Kamau | Data Analyst Portfolio
+    </footer>
+  
+    <script>
+      // === Intro Video ===
+      const intro = document.getElementById('intro');
+      const introVideo = document.getElementById('introVideo');
+      function enterSite() {
+        intro.style.opacity = '0';
+        setTimeout(() => { intro.style.display = 'none'; }, 1000);
+        introVideo.pause();
+      }
+  
+      // === Sidebar Menu ===
+      const sidebar = document.getElementById('sidebar');
+      const menuBtn = document.getElementById('menu-btn');
+      const menuOverlay = document.getElementById('menu-overlay');
+      menuBtn.onclick = () => {
+        sidebar.classList.toggle('active');
+        menuOverlay.classList.toggle('show');
+      };
+      menuOverlay.onclick = () => {
+        sidebar.classList.remove('active');
+        menuOverlay.classList.remove('show');
+      };
+  
+      // === Highlight Active Menu on Scroll ===
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.sidebar a');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (scrollY >= sectionTop) current = section.getAttribute('id');
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
       });
-    }, { threshold: 0.3 });
-
-    sections.forEach(section => observer.observe(section));
-  </script>
-</body>
-</html>
+  
+      // === Reveal on Scroll ===
+      const revealSections = document.querySelectorAll('section');
+      function revealOnScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+        revealSections.forEach(sec => {
+          const boxTop = sec.getBoundingClientRect().top;
+          if (boxTop < triggerBottom) sec.classList.add('visible');
+        });
+      }
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('load', revealOnScroll);
+  
+      // === Optimized Draggable Dashboards (Desktop + Mobile) ===
+      const container = document.getElementById('dashboards-container');
+      const cards = document.querySelectorAll('.dashboard-card');
+  
+      let activeCard = null;
+      let offsetX = 0;
+      let offsetY = 0;
+  
+      cards.forEach(card => {
+        card.addEventListener('mousedown', startDrag);
+        card.addEventListener('touchstart', startDrag, { passive: false });
+  
+        // Click to open Medium (tap works on mobile)
+        card.addEventListener('click', () => {
+          window.open('https://medium.com/@waithirak.dorothy', '_blank');
+        });
+      });
+  
+      function startDrag(e) {
+        e.preventDefault();
+        activeCard = e.target.closest('.dashboard-card');
+        const rect = activeCard.getBoundingClientRect();
+  
+        // Determine starting offset
+        if (e.type === 'mousedown') {
+          offsetX = e.clientX - rect.left;
+          offsetY = e.clientY - rect.top;
+          document.addEventListener('mousemove', drag);
+          document.addEventListener('mouseup', stopDrag);
+        } else if (e.type === 'touchstart') {
+          const touch = e.touches[0];
+          offsetX = touch.clientX - rect.left;
+          offsetY = touch.clientY - rect.top;
+          document.addEventListener('touchmove', drag, { passive: false });
+          document.addEventListener('touchend', stopDrag);
+        }
+  
+        activeCard.style.zIndex = 1000; // Bring to front
+      }
+  
+      function drag(e) {
+        e.preventDefault();
+        if (!activeCard) return;
+  
+        const containerRect = container.getBoundingClientRect();
+        let clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+        let clientY = e.type.startsWith('touch') ? e.touches[0].clientY : e.clientY;
+  
+        // Calculate new position
+        let x = clientX - containerRect.left - offsetX;
+        let y = clientY - containerRect.top - offsetY;
+  
+        // Constrain within container
+        x = Math.max(0, Math.min(x, containerRect.width - activeCard.offsetWidth));
+        y = Math.max(0, Math.min(y, containerRect.height - activeCard.offsetHeight));
+  
+        activeCard.style.left = x + 'px';
+        activeCard.style.top = y + 'px';
+        activeCard.style.position = 'absolute';
+      }
+  
+      function stopDrag() {
+        if (!activeCard) return;
+        activeCard.style.zIndex = '';
+        activeCard = null;
+        document.removeEventListener('mousemove', drag);
+        document.removeEventListener('mouseup', stopDrag);
+        document.removeEventListener('touchmove', drag);
+        document.removeEventListener('touchend', stopDrag);
+      }
+    </script>
+  </body>
+  </html>  
