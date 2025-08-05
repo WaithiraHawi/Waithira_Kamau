@@ -98,6 +98,11 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .hero::after {
       content: "";
@@ -118,14 +123,27 @@
     }
     .hero .btn:hover { background: #2563eb; }
 
-    /* Scroll Down Button */
+    /* Scroll Down Circle */
     .scroll-down {
       position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center;
-      color: var(--grey-light); cursor: pointer; font-size: 1rem;
+      cursor: pointer; font-size: 0.9rem;
       animation: bounce 2s infinite;
     }
-    .scroll-down i { font-size: 1.5rem; margin-top: 5px; }
+    .scroll-circle {
+      width: 35px; height: 35px; border: 2px solid var(--accent); 
+      border-radius: 50%; display: flex; justify-content: center; align-items: center;
+      margin-bottom: 5px; 
+    }
+    .scroll-circle::after {
+      content: ''; width: 6px; height: 6px; background: var(--accent);
+      border-radius: 50%; animation: scroll-dot 1.5s infinite;
+    }
+    @keyframes scroll-dot {
+      0% { transform: translateY(-5px); opacity: 0; }
+      50% { transform: translateY(5px); opacity: 1; }
+      100% { transform: translateY(10px); opacity: 0; }
+    }
     @keyframes bounce {
       0%, 100% { transform: translate(-50%, 0); }
       50% { transform: translate(-50%, -10px); }
@@ -207,7 +225,7 @@
 
   <!-- Intro Video -->
   <div class="intro" id="intro">
-    <video autoplay muted loop playsinline>
+    <video id="introVideo" autoplay muted playsinline>
       <source src="introd.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -233,8 +251,8 @@
     <p>Customer Experience | Data Analyst | Insights & Process Optimization</p>
     <a href="#projects" class="btn">Explore My Work</a>
     <div class="scroll-down" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
+      <div class="scroll-circle"></div>
       <span>Scroll Down</span>
-      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
@@ -242,22 +260,22 @@
   <section id="about" class="about">
     <img src="Logo.png" alt="Waithira Kamau">
     <p>
-    Hi, I’m <strong>Waithira Kamau</strong> — a data analyst with a 
-    foundation in <strong>statistics, programming, and customer experience</strong>. 
-    I specialize in <strong>data analysis, predictive modeling, and dashboard creation</strong> 
-    that drive data-informed decisions and elevate customer experience.
-  </p>
-  <p>
-    I have experience in <strong>SQL, Python, R, and Excel</strong>, combining analytical skills with 
-    visualization to uncover actionable insights. 
-    My career journey blends customer experience and data, enabling me to transform complex 
-    datasets into impactful business strategies.
-  </p>
-  <p>
-    I am passionate about <strong>customer experience, data storytelling, and process automation</strong>. 
-    My goal is to develop intelligent data solutions that improve decision-making, optimize operations, 
-    and create meaningful improvements in the overall customer experience.
-  </p>
+      Hi, I’m <strong>Waithira Kamau</strong> — a data analyst with a 
+      foundation in <strong>statistics, programming, and customer experience</strong>. 
+      I specialize in <strong>data analysis, predictive modeling, and dashboard creation</strong> 
+      that drive data-informed decisions and elevate customer experience.
+    </p>
+    <p>
+      I have experience in <strong>SQL, Python, R, and Excel</strong>, combining analytical skills with 
+      visualization to uncover actionable insights. 
+      My career journey blends customer experience and data, enabling me to transform complex 
+      datasets into impactful business strategies.
+    </p>
+    <p>
+      I am passionate about <strong>customer experience, data storytelling, and process automation</strong>. 
+      My goal is to develop intelligent data solutions that improve decision-making, optimize operations, 
+      and create meaningful improvements in the overall customer experience.
+    </p>
     <a href="Dorothy Mary Waithira Kamau Resume.pdf" download>Download My Resume</a>
   </section>
 
@@ -319,12 +337,12 @@
           <img src="custchurn.png" alt="Customer churn">
         </a>
         <div class="project-info">
-          <h4>Customer churn</h4>
+          <h4>Customer Churn</h4>
           <p>Predicted customer churn.</p>
         </div>
       </div>
       <div class="project-card">
-        <a href="https://github.com/WaithiraHawi/Customer_Lifetime_Value" target="_blank">
+        <a href="https://github.com/WaithiraHawi/KPI.git" target="_blank">
           <img src="kpi.png" alt="Key Performance Indicators">
         </a>
         <div class="project-info">
@@ -346,15 +364,25 @@
     </div>
   </section>
 
+  <footer>&copy; 2025 Waithira Kamau. All Rights Reserved.</footer>
 
   <script>
-    function enterSite() {
-      const intro = document.getElementById('intro');
-      intro.style.opacity = '0';
-      setTimeout(() => intro.style.display = 'none', 1000);
-    }
-    setTimeout(enterSite, 6000);
+    const intro = document.getElementById('intro');
+    const introVideo = document.getElementById('introVideo');
+    const hero = document.querySelector('.hero');
 
+    function enterSite() {
+      intro.style.opacity = '0';
+      setTimeout(() => { 
+        intro.style.display = 'none';
+        hero.classList.add('visible');
+      }, 1000);
+    }
+
+    // Auto-enter after video ends
+    introVideo.addEventListener('ended', enterSite);
+
+    // Sidebar menu logic
     const sidebar = document.getElementById('sidebar');
     const menuBtn = document.getElementById('menu-btn');
     const menuOverlay = document.getElementById('menu-overlay');
