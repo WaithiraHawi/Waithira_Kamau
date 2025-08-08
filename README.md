@@ -2,14 +2,15 @@
 
 Welcome to my portfolio repository! This repository hosts the code and assets for my personal portfolio website, which showcases my work, projects, and skills in **data analysis, machine learning, and customer experience**.
 
-**🌐 Portfolio:** [Visit Here](https://waithirahawi.github.io/Waithira_Kamau/)
+**🌐 Portfolio:** [Portfolio](https://waithirahawi.github.io/Waithira_Kamau/)
 
 ## 📖 About the Portfolio
 
 This portfolio was created to:
-
 * Highlight my professional projects, case studies, and skills.
 * Provide an interactive and engaging way to explore my work.
+
+---
 
 ## 💻 Languages & Technologies Used
 
@@ -21,6 +22,8 @@ This portfolio was built using a combination of **front-end web development tech
 * **Font Awesome** – For high-quality and scalable icons.
 * **GitHub Pages** – For hosting the portfolio online.
 * **Responsive Design Techniques** – Media queries and flexible layouts for mobile and desktop compatibility.
+
+---
 
 ## **Projects Overview**
 
@@ -66,6 +69,8 @@ This portfolio was built using a combination of **front-end web development tech
 * **Programming:** Python (pandas, NumPy, scikit-learn, seaborn, matplotlib, XGBoost)
 * **Tools:** Jupyter Notebook, Power BI, Excel
 * **Machine Learning Techniques:** Classification, Feature Engineering, Model Evaluation, Retention Modeling
+
+---
 
 ## **Author**
 
