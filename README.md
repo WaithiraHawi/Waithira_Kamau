@@ -20,7 +20,7 @@ This portfolio was built using a combination of **front-end web development tech
 * **CSS3** – For styling, layout design, color schemes, and animations.
 * **JavaScript** – For interactivity, DOM manipulation, and dynamic elements.
 * **Font Awesome** – For high-quality and scalable icons.
-* **GitHub Pages** – For hosting the portfolio online.
+* **GitHub Pages** – To host the portfolio online.
 * **Responsive Design Techniques** – Media queries and flexible layouts for mobile and desktop compatibility.
 
 ---
