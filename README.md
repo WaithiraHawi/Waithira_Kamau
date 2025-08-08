@@ -31,6 +31,6 @@ This portfolio was built using a combination of **front-end web development tech
 
 For inquiries:
 
-* **Email:** [your-email@example.com](mailto:waithirak.dorothy@gmail.com)
-* **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/waithira-kamau/)
+* **Email:** [waithirak.dorothy@gmai.com](mailto:waithirak.dorothy@gmail.com)
+* **LinkedIn:** [waithira-kamau](https://www.linkedin.com/in/waithira-kamau/)
 * **GitHub:** [waithirahawi](https://github.com/waithirahawi)
