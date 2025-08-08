@@ -74,8 +74,9 @@ This portfolio was built using a combination of **front-end web development tech
 
 ## **Author**
 
-**Waithira Kamau** — Customer Experience, Data Analysis
-Passionate about turning data into actionable insights to elevate customer experiences.
+**Dorothy Mary Waithira Kamau** 
+
+Customer Experience, Data Analysis. Passionate about turning data into actionable insights to elevate customer experiences.
 
 ## Contact
 
